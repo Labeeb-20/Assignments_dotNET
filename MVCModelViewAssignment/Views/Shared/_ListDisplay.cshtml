@@ -1,0 +1,48 @@
+﻿@model IEnumerable<MVCModelViewAssignment.Models.Movie>
+
+
+<table class="table" style="border:solid 2px black">
+    <thead>
+        <tr style="border:solid 2px black">
+            <th colspan="5" style="color:blue; background-color:lavender;border:solid 2px black;align-content:center"><center>Movies List</center></th>
+        </tr>
+        <tr style="border:solid 2px black">
+            <th style="border:solid 2px black">
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th style="border:solid 2px black">
+                @Html.DisplayNameFor(model => model.MovieName)
+            </th>
+            <th style="border:solid 2px black">
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+            <th style="border:solid 2px black">
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th style="border:solid 2px black">
+                @Html.DisplayNameFor(model => model.Producer)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            <tr style="border:solid 2px black">
+                <td style="border:solid 2px black">
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+                <td style="border:solid 2px black">
+                @Html.DisplayFor(modelItem => item.MovieName)
+            </td>
+            <td style="border:solid 2px black">
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td style="border:solid 2px black">
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td style="border:solid 2px black">
+                @Html.DisplayFor(modelItem => item.Producer)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,38 @@
+﻿@model List<MVCAssignment3.Models.Hall>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@if(Model.Count != 0) {
+    <center><h1 style="color:deeppink">Hall details</h1>
+<table border="2" style="text-align:center;">
+    <thead>
+        <tr>
+            <th style="border: 1px solid black; padding: 8px;color:deeppink;">Hall Name</th>
+                    <th style="border: 1px solid black;padding: 8px;color:deeppink;">Owner</th>
+                    <th style="border: 1px solid black; padding: 8px;color:deeppink;">Cost Per Day</th>
+                    <th style="border: 1px solid black; padding: 8px;color:deeppink;">Mobile</th>
+                    <th style="border: 1px solid black; padding: 8px;color:deeppink;">Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var hall in Model)
+        {
+            <tr>
+                <td style="border: 1px solid black; padding: 8px;">@hall.HallName</td>
+                <td style="border: 1px solid black; padding: 8px;">@hall.OwnerName</td>
+                <td style="border: 1px solid black; padding: 8px;">@hall.CostPerDay</td>
+                <td style="border: 1px solid black; padding: 8px;">@hall.Moblie</td>
+                <td style="border: 1px solid black; padding: 8px;">@hall.Address</td>
+            </tr>
+        }
+    </tbody>
+</table>
+    </center>
+}
+
+            else {
+    <center><h1 style="color:deeppink">@ViewBag.Message</h1></center>
+            }

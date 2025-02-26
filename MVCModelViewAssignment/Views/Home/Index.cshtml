@@ -1,0 +1,14 @@
+﻿@model MVCModelViewAssignment.Models.MovieVM
+<center>
+<h2 style="color:red">Movies List</h2>
+</center>
+
+@Html.Partial("_FormView", Model.Movie)
+<br />
+@Html.Partial("_ListDisplay", Model.Movies)
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
